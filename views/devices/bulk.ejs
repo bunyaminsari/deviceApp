@@ -1,0 +1,43 @@
+<%- include('../partials/header') %> 
+
+<div class="column">
+    <div class="column is-half is-offset-one-quarter">
+        <h1 class="subtitle">Import bulk devices</h1>
+<form action="/devices/bulk" method="POST" enctype="multipart/form-data">
+<div id="file-js-bulk" class="file has-name">
+    <label class="file-label">
+      <input class="file-input" type="file" name="file">
+      <span class="file-cta">
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+      <span class="file-name">
+        No file uploaded
+      </span>
+    </label>
+</div>
+    <div class="buttons is-centered py-4">
+        <button class="button is-outlined is-success is-fullwidth">Upload</button>
+    </div>
+</form>
+    </div>
+</div>  
+
+  <script>
+    const fileInput = document.querySelector('#file-js-bulk input[type=file]');
+    fileInput.onchange = () => {
+      if (fileInput.files.length > 0) {
+        const fileName = document.querySelector('#file-js-bulk .file-name');
+        fileName.textContent = fileInput.files[0].name;
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+<%- include('../partials/footer') %> 

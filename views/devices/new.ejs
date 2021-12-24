@@ -1,0 +1,62 @@
+
+<%- include('../partials/header') %> 
+
+
+<div class="column">
+<div class=" column is-half is-offset-one-quarter">
+    <h1 class="subtitle">Add New Device</h1>
+    <form action="/devices" method="POST" >
+        <div class="field">
+            <label class="label" for="product">Device</label>
+            <div class="control">
+                <input class="input" type="text" name="product" id="product" placeholder="Device">
+            </div>
+        </div>    
+        <div class="field">
+            <label class="label" for="make">Make</label>
+            <div class="control">
+                <input class="input" type="text" name="make" id="make" placeholder=" Make">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="model">Model</label>
+            <div class="control">
+                <input class="input" type="text" name="model" id="model" placeholder="Model">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="serial">Serial No</label>
+            <div class="control">
+                <input class="input" type="text" name="serial" id="serial" placeholder="Serial Number">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label"for="barcode">Barcode No</label>
+            <div class="control">
+                <input class="input"type="number" name="barcode" id="barcode" placeholder="Barcode Number">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label"for="price">Price</label>
+            <div class="control">
+                <input class="input"type="number" name="price"  id="price" placeholder="Price">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label"for="category">Category</label>
+            <div class="control">
+              <div class="select">
+                <select name="category" id="category">
+                    <%for (let category of categories){ %>
+                        <option value="<%=category%>"><%=category%></option>
+                   <% } %> 
+                </select>
+              </div>
+            </div>
+          </div>
+         
+        <button class="button is-success is-outlined">Add new device</button>
+    </form>
+    </div>
+</div>
+<%- include('../partials/footer') %> 

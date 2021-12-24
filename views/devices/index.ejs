@@ -1,0 +1,52 @@
+<%- include('../partials/header') %> 
+
+<div class="column">
+  <div class="column is-half is-offset-one-quarter">
+
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+      
+        <th>Device</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Serial No</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        
+        <th>Device</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Serial No</th>
+      </tr>
+    </tfoot>
+    <tbody>
+    <% for(let d of devices){ %>
+      <tr>
+        
+        <td><%= d.product %></td>
+        <td><%= d.make %></td>
+        <td><%= d.model %></td>
+        <td><a href="/devices/<%= d._id  %> "><%= d.serial %></a></td>
+      </tr>
+    <% } %>
+</tbody>
+</table>
+
+
+<% if(category !== 'All') {%> 
+  <a class="button is-info is-outlined" href="/devices">All Devices</a>
+  <% } %> 
+  
+  <a class="button is-success is-outlined" href="/devices/new">Add new device</a>
+  
+
+  </div>
+</div>
+
+
+
+
+<%- include('../partials/footer') %> 
